@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MuhasebeApp.Views.CheckPages.AddCheck"
+             Title="AddCheck">
+    <Grid>
+        <ScrollView x:Name="myListView">
+            <StackLayout BackgroundColor="#001524" >
+
+                <Grid Margin="10" Padding="10"  >
+                    <Grid Padding="10" RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,*" ColumnDefinitions="*,*">
+
+                    <Label Grid.Row="0" Grid.Column="0" VerticalTextAlignment="Center" Grid.ColumnSpan="2" Text="Çek Sırası: " TextColor="White"  FontFamily="input.ttf#input" />
+                    <Entry Grid.Row="0" Grid.Column="1" Keyboard="Numeric"  x:Name="CekSira" Placeholder="Çek Sırasını Giriniz" FontFamily="input.ttf#input " TextColor="White" />
+                    <Label Grid.Row="1" Grid.Column="0" VerticalTextAlignment="Center" Grid.ColumnSpan="2" Text="Hesap Numarası: " TextColor="White"  FontFamily="input.ttf#input" />
+                    <Entry  Grid.Row="1" Grid.Column="1" Keyboard="Numeric"  x:Name="HesapNu" Placeholder="Hesap Numarası Giriniz" FontFamily="input.ttf#input" TextColor="White"/>
+
+                    <Label Grid.Row="2" Grid.Column="0" VerticalTextAlignment="Center" Grid.ColumnSpan="2" Text="Çek Numarası:" TextColor="White"  FontFamily="input.ttf#input" />
+                    <Entry Grid.Row="2" Grid.Column="1" Keyboard="Numeric"  x:Name="CekNu" Placeholder="Çek Numarası Giriniz" FontFamily="input.ttf#input" TextColor="White" />
+
+                    <Label Grid.Row="3" Grid.Column="0" VerticalTextAlignment="Center" Grid.ColumnSpan="2" Text="Çek Türü:"  TextColor="White" FontFamily="input.ttf#input"/>
+                    <Entry Grid.Row="3" Grid.Column="1"  x:Name="CekTuru" Placeholder="Çek Türü Giriniz" FontFamily="input.ttf#input" TextColor="White" />
+
+                    <Label Grid.Row="4" Grid.Column="0"  VerticalTextAlignment="Center" Grid.ColumnSpan="2" Text="Banka:"  TextColor="White" FontFamily="input.ttf#input" />
+                    <Entry Grid.Row="4" Grid.Column="1"  x:Name="Banka"  Placeholder="Banka Giriniz" FontFamily="input.ttf#input" TextColor="White" />
+                    <Label Grid.Row="5" Grid.Column="0" VerticalTextAlignment="Center" Grid.ColumnSpan="2" Text="Şube:"  TextColor="White" FontFamily="input.ttf#input"/>
+                    <Entry Grid.Row="5" Grid.Column="1"  x:Name="Sube" Placeholder="Şube Giriniz" FontFamily="input.ttf#input" TextColor="White" />
+                    <Label Grid.Row="6" Grid.Column="0"  VerticalTextAlignment="Center" Grid.ColumnSpan="2" Text="Kimden Alındı:" TextColor="White"  FontFamily="input.ttf#input" />
+                    <Entry Grid.Row="6" Grid.Column="1" x:Name="kimden"  Placeholder="Kimden Alındı Giriniz" FontFamily="input.ttf#input" TextColor="White" />
+                    <Label Grid.Row="7" Grid.Column="0" VerticalTextAlignment="Center" Grid.ColumnSpan="2" Text="Kime Ciro Edildi :"  TextColor="White"  FontFamily="input.ttf#input"/>
+                    <Entry Grid.Row="7" Grid.Column="1"  x:Name="kimdenCiro" Placeholder="Kime Ciro Edildi Giriniz" FontFamily="input.ttf#input" TextColor="White" />
+                    <Label Grid.Row="8" Grid.Column="0"  VerticalTextAlignment="Center" Grid.ColumnSpan="2" Text="Vade:"  TextColor="White" FontFamily="input.ttf#input"  />
+                    <Picker  Grid.Row="8" Grid.Column="1" Title="Vade Ayı" TextColor="White" FontSize="11"  VerticalTextAlignment="Center" Margin="0" x:Name="ay" FontFamily="input.ttf#input" >
+                        <Picker.Items>
+                            <x:String>1</x:String>
+                            <x:String>2</x:String>
+                            <x:String>3</x:String>
+                            <x:String>4</x:String>
+                            <x:String>5</x:String>
+                            <x:String>6</x:String>
+                            <x:String>7</x:String>
+                            <x:String>8</x:String>
+                            <x:String>9</x:String>
+                            <x:String>10</x:String>
+                            <x:String>11</x:String>
+                            <x:String>12</x:String>
+                        </Picker.Items>
+                    </Picker>
+
+                    <Label Grid.Row="9" Grid.Column="0"  VerticalTextAlignment="Center" Grid.ColumnSpan="2" Text="Vade Tarihi:"  TextColor="White" FontFamily="input.ttf#input" />
+                    <DatePicker  Grid.Row="9"  x:Name="vadeTarihi" Grid.Column="1" Format="d" FontSize="11" TextColor="White" FontFamily="input.ttf#input"></DatePicker>
+
+
+
+                    <Label Grid.Row="10" Grid.Column="0" VerticalTextAlignment="Center" Grid.ColumnSpan="2"  TextColor="White" Text="Alınma Tarihi:" FontFamily="input.ttf#input" />
+                    <DatePicker  Grid.Row="10" x:Name="alinmaTarihi" Grid.Column="1" Format="d" FontSize="11"  TextColor="White" FontFamily="input.ttf#input"></DatePicker>
+
+                    <Label Grid.Row="11" Grid.Column="0" VerticalTextAlignment="Center" Grid.ColumnSpan="2"  TextColor="White" Text="Çıkış Tarihi:" FontFamily="input.ttf#input"/>
+                    <DatePicker  Grid.Row="11"  x:Name="cikisTarihi" Grid.Column="1" Format="d" FontSize="11" TextColor="White" FontFamily="input.ttf#input"></DatePicker>
+                    <!--Date="1/1/1990"-->
+
+                    <Label Grid.Row="12" Grid.Column="0" VerticalTextAlignment="Center" Grid.ColumnSpan="2" TextColor="White"  Text="Tutar"  FontFamily="input.ttf#input"/>
+                    <Entry Grid.Row="12" Grid.Column="1"  Keyboard="Numeric" x:Name="Tutar" Placeholder="Tutar Giriniz" FontFamily="input.ttf#input" TextColor="White" />
+
+                    <Label Grid.Row="13" Grid.Column="0" VerticalTextAlignment="Center" Grid.ColumnSpan="2" TextColor="White"   Text="Kendime Ciro Et "  FontFamily="input.ttf#input"/>
+                    <CheckBox Grid.Row="13" x:Name="kendimeCiro" Grid.Column="1" Color="Green"  ></CheckBox>
+
+                    <Label Grid.Row="14" Grid.Column="0" VerticalTextAlignment="Center" Grid.ColumnSpan="2" TextColor="White"  Text="Resmi "  FontFamily="input.ttf#input"/>
+                    <CheckBox Grid.Row="14"  x:Name="Resmi" Grid.Column="1" Color="Green"  ></CheckBox>
+                    <Label Grid.Row="15" Grid.Column="0" VerticalTextAlignment="Center" Grid.ColumnSpan="2" TextColor="White"  Text="G. Resmi "  FontFamily="input.ttf#input"/>
+                    <CheckBox Grid.Row="15"   x:Name="Gresmi" Grid.Column="1" Color="Green"  ></CheckBox>
+
+                    <Frame Grid.Row="16" Grid.ColumnSpan="2" HeightRequest="80" Margin="0,22,0,0" BackgroundColor="#1F4172" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" >
+                        <SearchBar  CancelButtonColor="Red" Placeholder="Arama Yap"    FontSize="11"  TextColor="White"  PlaceholderColor="White"   SearchButtonPressed="HepsinGetir"   HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" FontFamily="input.ttf#input" ></SearchBar>
+                    </Frame>
+
+
+                    <ActivityIndicator  Grid.Row="17" Grid.Column="2" x:Name="running"  IsRunning="True" IsVisible="False" HeightRequest="240" WidthRequest="150" Color="White" HorizontalOptions="EndAndExpand" VerticalOptions="CenterAndExpand"/>
+
+                </Grid>
+                </Grid>
+
+                <HorizontalStackLayout  HorizontalOptions="CenterAndExpand"   Grid.Row="1" Margin="10" VerticalOptions="StartAndExpand" Padding="10" Spacing="10" >
+                    <ScrollView  HorizontalScrollBarVisibility="Always" VerticalScrollBarVisibility="Never" Orientation="Horizontal">
+                        <!--<Frame CornerRadius="15" HasShadow="True" WidthRequest="360"  BackgroundColor="#001524" >
+       </Frame>-->
+                        <StackLayout x:Name="mainStackLayout">
+                            <StackLayout x:Name="dynamicStackLayout"   BindableLayout.ItemsSource="{Binding DataItems}"  >
+                                <BindableLayout.ItemTemplate>
+                                    <DataTemplate>
+                                    </DataTemplate>
+                                </BindableLayout.ItemTemplate>
+                            </StackLayout>
+                        </StackLayout>
+                    </ScrollView>
+                </HorizontalStackLayout>
+                <StackLayout HeightRequest="250">
+
+                </StackLayout>
+            </StackLayout>
+
+            <!--</StackLayout>-->
+        </ScrollView>
+        <Grid  HeightRequest="50" Margin="10" VerticalOptions="EndAndExpand">
+            <Button Text="Ciro Et" Clicked="Button_Clicked" WidthRequest="270"  BackgroundColor="Black" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" TextColor="White" FontFamily="input.ttf#input" FontSize="Body" />
+
+        </Grid>
+    </Grid>
+</ContentPage>

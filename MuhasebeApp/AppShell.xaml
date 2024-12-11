@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="MuhasebeApp.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:MuhasebeApp.Views.CheckPages"
+    Shell.FlyoutBehavior="Disabled"
+    Title="MuhasebeApp">
+
+
+    <TabBar IsVisible="true">
+        <Tab Title="Alınacak Çekler"  Icon="t1.png"  >
+            <ShellContent ContentTemplate="{DataTemplate local:EndorsementCheck}" />
+        </Tab>
+        <Tab Title="Kişisel Çekler"  Icon="t7.png">
+            <ShellContent ContentTemplate="{DataTemplate local:PersonalChecks}" />
+        </Tab>
+        <Tab Title="Çek Ekle"  Icon="t5.png"  >
+        <ShellContent ContentTemplate="{DataTemplate local:AddCheck}" />
+        </Tab>
+        <!--<Tab Title="Kişisel"  Icon="t5.png"  >
+            <ShellContent ContentTemplate="{DataTemplate local:KisiselCekler}" />
+        </Tab>
+        <Tab Title="Finans"  Icon="t6.png" >
+            <ShellContent ContentTemplate="{DataTemplate local:FinansPaneli}" />
+        </Tab>
+        <Tab Title="Ekle"  Icon="t2.png">
+            <ShellContent ContentTemplate="{DataTemplate local:CiroEt}"  />
+        </Tab>-->
+    </TabBar>
+
+</Shell>

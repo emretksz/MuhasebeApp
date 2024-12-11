@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MuhasebeApp.Views.CheckPages.EndorsementCheck"
+             Title="EndorsementCheck">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Çek Ekle"
+                 Priority="0"
+                 Order="Primary"
+                 Clicked="OnMyButtonClick"
+                />
+    </ContentPage.ToolbarItems>
+
+    <ScrollView>
+
+
+        <Grid RowDefinitions="Auto,*" >
+            <VerticalStackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" >
+                <Grid  Margin="0,20,0,20"  >
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <FlexLayout HorizontalOptions="CenterAndExpand" VerticalOptions="EndAndExpand">
+                        <Frame CornerRadius="20"  HeightRequest="90" HasShadow="True" BackgroundColor="#232D3F">
+                            <Label x:Name="toplamdurum" Text="Toplam Ciro: 0TL
+       Kalan alacak: 0 TL" VerticalOptions="CenterAndExpand" FontSize="12" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontAttributes="Bold" HorizontalOptions="CenterAndExpand" TextColor="White" />
+                        </Frame>
+                    </FlexLayout>
+                </Grid>
+
+                <!--ZAMANLA İLGİLİ İŞLEM İLŞİN KULLANILABİLİR-->
+                <Grid ColumnDefinitions="*,Auto " Margin="24,0,20,10"  >
+                    <Frame HeightRequest="40"  WidthRequest="270"   Margin="35,0,36,20" Padding="0">
+                        <SearchBar Placeholder="Arama Yap"  x:Name="textim" SearchButtonPressed="alinacakAra"  HorizontalTextAlignment="End" TextColor="Black"  PlaceholderColor="Black"></SearchBar>
+                        <!--TextChanged="textIzle"-->
+                    </Frame>
+                </Grid>
+                <Grid ColumnDefinitions="*,Auto" Margin="70,0,0,0" WidthRequest="350"  >
+                    <StackLayout VerticalOptions="StartAndExpand" HorizontalOptions="StartAndExpand" Orientation="Horizontal" >
+                        <Label Text="Ay: " TextColor="White" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"></Label>
+                        <Picker  SelectedIndex="1" x:Name="Ay" TextColor="White"    FontSize="12" HorizontalOptions="Center"  VerticalOptions="CenterAndExpand" VerticalTextAlignment="Center" Margin="10,0,0,0" TitleColor="White" WidthRequest="80" >
+                            <Picker.Items>
+                                <x:String>Tum Aylar</x:String>
+                                <x:String>OCAK</x:String>
+                                <x:String>ŞUBAT</x:String>
+                                <x:String>MART</x:String>
+                                <x:String>NİSAN</x:String>
+                                <x:String>MAYIS</x:String>
+                                <x:String>HAZİRAN</x:String>
+                                <x:String>TEMMUZ</x:String>
+                                <x:String>AĞUSTOS</x:String>
+                                <x:String>EYLÜL</x:String>
+                                <x:String>EKİM</x:String>
+                                <x:String>KASIM</x:String>
+                                <x:String>ARALIK</x:String>
+                            </Picker.Items>
+                        </Picker>
+                        <!--<Image Source="zaman" WidthRequest="20" HorizontalOptions="Center" VerticalOptions="Center"/>-->
+                    </StackLayout>
+                    <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Orientation="Horizontal" Margin="20,0,0,0">
+                        <Label Text="Yıl: " HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" FontSize="13" TextColor="White" Margin="0,0,0,0" ></Label >
+                        <Picker Title="Yıl Seçin"  x:Name="Yıl" TextColor="White"  FontSize="12" HorizontalOptions="StartAndExpand"  WidthRequest="70" VerticalOptions="CenterAndExpand" VerticalTextAlignment="Center" Margin="10,0,0,0" TitleColor="White">
+                            <Picker.Items>
+                                <x:String>Tum Yıllar</x:String>
+                                <x:String>2021</x:String>
+                                <x:String>2022</x:String>
+                                <x:String>2023</x:String>
+                                <x:String>2024</x:String>
+                                <x:String>2025</x:String>
+                                <x:String>2026</x:String>
+                                <x:String>2027</x:String>
+                                <x:String>2028</x:String>
+                                <x:String>2029</x:String>
+                                <x:String>2030</x:String>
+                                <x:String>2031</x:String>
+                                <x:String>2032</x:String>
+                                <x:String>2033</x:String>
+                                <x:String>2034</x:String>
+                                <x:String>2035</x:String>
+                                <x:String>2036</x:String>
+                                <x:String>2037</x:String>
+                            </Picker.Items>
+                        </Picker>
+                    </StackLayout>
+                    <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="EndAndExpand" Orientation="Horizontal">
+                        <ImageButton Source="searchicon.png" WidthRequest="130" HeightRequest="30"   Clicked="Filtrele"></ImageButton>
+                    </StackLayout>
+
+                </Grid>
+
+            </VerticalStackLayout>
+
+            <Grid RowDefinitions="*,Auto" ZIndex="-100" BackgroundColor="#1F4172"  HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                <Border StrokeShape="RoundRectangle 0,0,40,40" Opacity="1" ZIndex="-999" BackgroundColor="#001524"   StrokeThickness="0" HeightRequest="270" >
+                </Border>
+            </Grid>
+
+            <HorizontalStackLayout HorizontalOptions="CenterAndExpand"   Grid.Row="1" Margin="10" VerticalOptions="StartAndExpand" Padding="10" Spacing="10">
+                <StackLayout>
+                    <StackLayout Padding="0,0,40,0">
+                        <ActivityIndicator  x:Name="running"  IsRunning="True" IsVisible="True" HeightRequest="120" WidthRequest="120" Color="White" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand"/>
+                    </StackLayout>
+                    <StackLayout x:Name="mainStackLayout">
+                        <ScrollView   HorizontalScrollBarVisibility="Always" VerticalScrollBarVisibility="Never" Orientation="Horizontal">
+
+                            <StackLayout x:Name="dynamicStackLayout"  BindableLayout.ItemsSource="{Binding DataItems}">
+                                <BindableLayout.ItemTemplate >
+                                    <DataTemplate >
+                                    </DataTemplate>
+                                </BindableLayout.ItemTemplate>
+                            </StackLayout>
+                        </ScrollView>
+                    </StackLayout>
+                </StackLayout>
+
+            </HorizontalStackLayout>
+
+        </Grid>
+    </ScrollView>
+</ContentPage>
